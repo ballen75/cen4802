@@ -1,0 +1,24 @@
+/*+
+
+Brianna Allen, COP3330-16376, 11/16/2025
+Introduction to making a web application will have the ability to display data on the screen, allow the user to enter data, and then display that data back to the user.
+Spring boot in Java is a framework that can be used to simplify the development of spring applications.
+By providing a fast and efficient way to set up, configure, and run simple web based applications.
+The web application allow for user input involving Student ID, Date (Month,Day and Year) and a message.
+After form submission the results page will display the data back to the user with a header and a line message that shows "Here is the data you entered".
+ The main method uses Spring Boot springapplication.run to launch the application.
+ */
+package com.example.handlingformsubmission;
+
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class HandlingFormSubmissionApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(HandlingFormSubmissionApplication.class, args);
+	}
+
+}

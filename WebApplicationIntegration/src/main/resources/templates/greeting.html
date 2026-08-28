@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Greeting Form</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <style>
+        /* Styles the main header at the top */
+        .header-title {
+            font-size: 32pt;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        /* Styles the instructions below the header */
+        .instruction {
+            font-weight: bold;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- HEADER SECTION -->
+<div class="header-title">
+    Brianna Allen – COP 3330 Project 8: Greeting
+</div>
+
+<!-- INSTRUCTION TEXT -->
+<div class="instruction">
+    <strong><em>Please enter your student ID, a date, and a message below.</em></strong>
+</div>
+
+
+
+<!-- FORM THAT SUBMITS TO /greeting USING POST -->
+<form th:action="@{/greeting}"
+      th:object="${greeting}"
+      method="post">
+
+    <!-- INPUT FOR STUDENT ID -->
+    <p><b>Student Id:</b>
+        <input type="text" th:field="*{id}" />
+    </p>
+
+    <!-- DATE INPUTS -->
+    <p><b>Month:</b>
+        <input type="number" min="1" max="12" th:field="*{month}" />
+    </p>
+
+    <p><b>Day:</b>
+        <input type="number" min="1" max="31" th:field="*{day}" />
+    </p>
+
+    <p><b>Year:</b>
+        <input type="number" min="1900" max="2100" th:field="*{year}" />
+    </p>
+
+    <!-- MESSAGE INPUT -->
+    <p><b>Message:</b>
+        <input type="text" th:field="*{content}" />
+    </p>
+
+    <!-- SUBMIT & RESET BUTTONS -->
+    <p>
+        <input type="submit" value="Enter Data" />
+        <input type="reset" value="Clear" />
+    </p>
+</form>
+
+</body>
+</html>

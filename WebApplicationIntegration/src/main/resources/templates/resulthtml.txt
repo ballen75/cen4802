@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Results</title>
+
+    <style>
+        /* Styles the header at the top of the page */
+        .header-title {
+            font-size: 26pt;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        /* Styles the italic explanatory message */
+        .italic-message {
+            margin-bottom: 20px;
+        }
+
+        /* Makes a link look like a small text-style button */
+        .link-button {
+            background: none;
+            border: none;
+            color: blue;
+            text-decoration: underline;
+            cursor: pointer;
+            padding: 0;
+            font-size: 12pt;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- PAGE HEADER -->
+<div class="header-title">
+    Brianna Allen – COP 3330 Project 8: Results
+</div>
+
+<!-- MESSAGE SHOWN ABOVE THE DATA -->
+<div class="italic-message">
+    Here is the <em>data</em> you entered.
+</div>
+
+<!-- DISPLAY THE STUDENT ID -->
+<p>Student ID: <span th:text="${greeting.id}"></span></p>
+
+<!-- DISPLAY THE DATE AS MM/DD/YYYY -->
+<p>Date
+    <span th:text="${greeting.month + '/' + greeting.day + '/' + greeting.year}"></span>
+</p>
+
+<!-- DISPLAY THE MESSAGE ENTERED BY THE USER -->
+<p>Message: <span th:text="${greeting.content}"></span></p>
+
+<!-- LINK THAT RETURNS TO THE FORM TO SUBMIT AGAIN -->
+<p>
+    <a href="/greeting" class="link-button">Submit another message</a>
+</p>
+
+</body>
+</html>
