@@ -18,6 +18,12 @@
             font-style: italic;
             margin-bottom: 20px;
         }
+
+        /* Styles validation error messages */
+        .error-message {
+            color: red;
+            font-weight: bold;
+        }
     </style>
 </head>
 
@@ -33,7 +39,11 @@
     <strong><em>Please enter your student ID, a date, and a message below.</em></strong>
 </div>
 
-
+<!-- ERROR MESSAGE FOR MISSING FIELDS -->
+<p th:if="${error}"
+   th:text="${error}"
+   class="error-message">
+</p>
 
 <!-- FORM THAT SUBMITS TO /greeting USING POST -->
 <form th:action="@{/greeting}"
@@ -42,25 +52,41 @@
 
     <!-- INPUT FOR STUDENT ID -->
     <p><b>Student Id:</b>
-        <input type="text" th:field="*{id}" />
+        <input type="text"
+               th:field="*{id}"
+               required />
     </p>
 
     <!-- DATE INPUTS -->
     <p><b>Month:</b>
-        <input type="number" min="1" max="12" th:field="*{month}" />
+        <input type="number"
+               min="1"
+               max="12"
+               th:field="*{month}"
+               required />
     </p>
 
     <p><b>Day:</b>
-        <input type="number" min="1" max="31" th:field="*{day}" />
+        <input type="number"
+               min="1"
+               max="31"
+               th:field="*{day}"
+               required />
     </p>
 
     <p><b>Year:</b>
-        <input type="number" min="1900" max="2100" th:field="*{year}" />
+        <input type="number"
+               min="1900"
+               max="2100"
+               th:field="*{year}"
+               required />
     </p>
 
     <!-- MESSAGE INPUT -->
     <p><b>Message:</b>
-        <input type="text" th:field="*{content}" />
+        <input type="text"
+               th:field="*{content}"
+               required />
     </p>
 
     <!-- SUBMIT & RESET BUTTONS -->
@@ -68,6 +94,7 @@
         <input type="submit" value="Enter Data" />
         <input type="reset" value="Clear" />
     </p>
+
 </form>
 
 </body>
