@@ -31,7 +31,7 @@
 
 <!-- HEADER SECTION -->
 <div class="header-title">
-    Brianna Allen – COP 3330 Project 8: Greeting
+    Brianna Allen – Rebuilding with Maven
 </div>
 
 <!-- INSTRUCTION TEXT -->
@@ -79,6 +79,14 @@
                min="1900"
                max="2100"
                th:field="*{year}"
+               required />
+    </p>
+
+    <p><b>Expected Graduation Year:</b>
+        <input type="number"
+               min="2020"
+               max="2100"
+               th:field="*{expectedGraduationYear}"
                required />
     </p>
 

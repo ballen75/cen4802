@@ -1,26 +1,23 @@
+
 package com.example.handlingformsubmission;
 
 /*
-This class stores the data entered by the user in the form. It will store student ID, date, and the message.
-Spring boot will automatically bind the form fields to the object.
-This method uses a Model object to expose a new Greeting to the view template.
-The implementation of the method body performs server-side rendering of the HTML by converting the view name greeting into a template to render.
- */
+This class stores the data entered by the user in the form. It will store student ID, date, expected graduation year, and the message.
+Spring Boot will automatically bind the form fields to the object.
+*/
 
 public class Greeting {
 
-    private String id; //Student ID entered by the user
+    private String id;
 
-    //Month, day, and year values entered by the user.
     private Integer month;
     private Integer day;
     private Integer year;
 
-    //Message the user typed into the form
+    private Integer expectedGraduationYear;
+
     private String content;
 
-    // Getters and setters
-    //This will allow Spring and Thymeleaf to access and update the fields.
     public String getId() { return id; }
     public void setId(String id) { this.id = id; }
 
@@ -32,6 +29,14 @@ public class Greeting {
 
     public Integer getYear() { return year; }
     public void setYear(Integer year) { this.year = year; }
+
+    public Integer getExpectedGraduationYear() {
+        return expectedGraduationYear;
+    }
+
+    public void setExpectedGraduationYear(Integer expectedGraduationYear) {
+        this.expectedGraduationYear = expectedGraduationYear;
+    }
 
     public String getContent() { return content; }
     public void setContent(String content) { this.content = content; }
