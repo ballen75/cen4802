@@ -32,6 +32,7 @@ public class GreetingController {
             greeting.getMonth() == null ||
             greeting.getDay() == null ||
             greeting.getYear() == null ||
+            greeting.getExpectedGraduationYear() == null ||
             greeting.getContent() == null || greeting.getContent().isBlank()) {
 
       // Return to the form if required information is missing
