@@ -90,20 +90,38 @@
                required />
     </p>
 
-    <!-- MESSAGE INPUT -->
+    <!-- MESSAGE INPUT WITH CHARACTER COUNTER -->
     <p><b>Message:</b>
         <input type="text"
                th:field="*{content}"
+               id="message"
+               maxlength="100"
+               oninput="updateCharacterCount()"
                required />
+    </p>
+
+    <p>
+        Characters: <span id="characterCount">0</span> / 100
     </p>
 
     <!-- SUBMIT & RESET BUTTONS -->
     <p>
         <input type="submit" value="Enter Data" />
-        <input type="reset" value="Clear" />
+        <input type="reset" value="Clear" onclick="resetCharacterCount()" />
     </p>
 
 </form>
+<script>
+    function updateCharacterCount() {
+        const message = document.getElementById("message");
+        const characterCount = document.getElementById("characterCount");
 
+        characterCount.textContent = message.value.length;
+    }
+
+    function resetCharacterCount() {
+        document.getElementById("characterCount").textContent = "0";
+    }
+</script>
 </body>
 </html>
