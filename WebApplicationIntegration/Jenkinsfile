@@ -1,0 +1,16 @@
+pipeline {
+    agent any
+
+    tools {
+        maven 'Maven'
+    }
+
+    stages {
+        stage('Build, Test, and Package') {
+            steps {
+                sh 'mvn package'
+                archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
+            }
+        }
+    }
+}
