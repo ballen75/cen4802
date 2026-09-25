@@ -42,10 +42,12 @@
 </div>
 
 <!-- DISPLAY THE STUDENT ID -->
-<p>Student ID: <span th:text="${greeting.id}"></span></p>
+<p>Student ID:
+    <span th:text="${greeting.id}"></span>
+</p>
 
 <!-- DISPLAY THE DATE AS MM/DD/YYYY -->
-<p>Date
+<p>Date:
     <span th:text="${greeting.month + '/' + greeting.day + '/' + greeting.year}"></span>
 </p>
 
@@ -54,8 +56,15 @@
     <span th:text="${greeting.expectedGraduationYear}"></span>
 </p>
 
+<!-- DISPLAY THE CALCULATED GRADUATION STATUS -->
+<p>Graduation Status:
+    <span th:text="${greeting.graduationStatus}"></span>
+</p>
+
 <!-- DISPLAY THE MESSAGE ENTERED BY THE USER -->
-<p>Message: <span th:text="${greeting.content}"></span></p>
+<p>Message:
+    <span th:text="${greeting.content}"></span>
+</p>
 
 <!-- LINK THAT RETURNS TO THE FORM TO SUBMIT AGAIN -->
 <p>
