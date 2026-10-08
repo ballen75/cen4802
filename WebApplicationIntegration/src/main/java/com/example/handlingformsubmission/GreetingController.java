@@ -1,3 +1,4 @@
+
 package com.example.handlingformsubmission;
 
 /*
@@ -14,6 +15,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import java.time.Year;
 
 @Controller
 public class GreetingController {
@@ -41,8 +43,14 @@ public class GreetingController {
       return "greeting";
     }
 
+    // Calculate the number of years until graduation
+    int currentYear = Year.now().getValue();
+    int graduationYear = greeting.getExpectedGraduationYear();
+    int yearsUntilGraduation = Math.max(0, graduationYear - currentYear);
+
     // Display the result when all required fields are completed
     model.addAttribute("greeting", greeting);
+    model.addAttribute("yearsUntilGraduation", yearsUntilGraduation);
     return "result";
   }
 }
