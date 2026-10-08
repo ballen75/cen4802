@@ -46,7 +46,7 @@ public class GreetingController {
     // Calculate the number of years until graduation
     int currentYear = Year.now().getValue();
     int graduationYear = greeting.getExpectedGraduationYear();
-    int yearsUntilGraduation = Math.max(0, graduationYear - currentYear + 1);
+    int yearsUntilGraduation = Math.max(0, graduationYear - currentYear);
 
     // Display the result when all required fields are completed
     model.addAttribute("greeting", greeting);
