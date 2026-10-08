@@ -9,8 +9,16 @@ pipeline {
         stage('Build, Test, and Package') {
             steps {
                 dir('WebApplicationIntegration') {
-                    sh 'mvn package'
+                    sh 'mvn clean package'
                     archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
+                }
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                dir('WebApplicationIntegration') {
+                    sh 'docker build -t graduation-web-app:latest .'
                 }
             }
         }
