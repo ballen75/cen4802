@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
+import java.time.Year;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -106,4 +107,33 @@ class GreetingControllerTest {
 
         System.out.println("PASSED: Blank message was rejected.");
     }
+
+
+    /*
+     * Test 5:
+     * Verifies that the graduation countdown correctly calculates
+     * the number of years remaining until graduation.
+     */
+    @Test
+    void testGraduationCountdown() throws Exception {
+
+        System.out.println("Running testGraduationCountdown...");
+
+        int currentYear = Year.now().getValue();
+        int graduationYear = currentYear + 2;
+
+        mockMvc.perform(post("/greeting")
+                        .param("id", "V12345678")
+                        .param("month", "10")
+                        .param("day", "8")
+                        .param("year", String.valueOf(currentYear))
+                        .param("expectedGraduationYear", String.valueOf(graduationYear))
+                        .param("content", "Testing graduation countdown"))
+                .andExpect(status().isOk())
+                .andExpect(view().name("result"))
+                .andExpect(model().attribute("yearsUntilGraduation", 2));
+
+        System.out.println("PASSED: Graduation countdown calculated correctly.");
+    }
+
 }
