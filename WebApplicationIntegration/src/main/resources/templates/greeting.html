@@ -45,10 +45,13 @@
    class="error-message">
 </p>
 
+
 <!-- FORM THAT SUBMITS TO /greeting USING POST -->
 <form th:action="@{/greeting}"
       th:object="${greeting}"
-      method="post">
+      method="post"
+      novalidate>
+
 
     <!-- INPUT FOR STUDENT ID -->
     <p><b>Student Id:</b>
