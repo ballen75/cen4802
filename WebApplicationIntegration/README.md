@@ -78,3 +78,35 @@ Once the application and port-forwarding containers are running, the application
 **http://localhost:8082/greeting**
 
 The application displays the submitted greeting information and the calculated years remaining until graduation.
+
+
+## Application Logging
+
+The application uses SLF4J and Logback, which are included with Spring Boot, to record application activity and help identify potential issues.
+
+Logging is implemented in `GreetingController.java` and includes the following levels:
+
+- **INFO** – Records when the greeting form is accessed, submitted, or processed successfully.
+- **DEBUG** – Records additional details about form processing, including creating a new Greeting object and calculating the years remaining until graduation.
+- **WARN** – Records when a user submits the form with missing required information.
+- **ERROR** – Records an exception when the expected graduation year is entered as 2099.
+
+### Logging Configuration
+
+The logging configuration is located in `src/main/resources/application.properties`.
+
+The application is currently configured to use DEBUG logging for the application package, allowing DEBUG, INFO, WARN, and ERROR messages to be recorded.
+
+The logging level can be changed to control how much information is recorded. For example, changing the level from DEBUG to INFO filters out DEBUG messages while continuing to record INFO, WARN, and ERROR messages.
+
+### Viewing Application Logs
+
+Application logs can be viewed in the IntelliJ IDEA Run console while the application is running.
+
+The console output can also be saved to a text file for reviewing and analyzing recorded events. PowerShell can be used to count log entries and filter logs for specific messages or logging levels.
+
+### Form Validation
+
+The greeting form uses server-side validation in `GreetingController.java` to check for missing required fields.
+
+The HTML form includes the `novalidate` attribute, allowing incomplete submissions to reach the Java controller. When required information is missing, the application displays an error message and records a WARN log.
