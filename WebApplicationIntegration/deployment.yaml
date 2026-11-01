@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: greeting-app
-          image: greeting-app:v3
+          image: greeting-app:v4
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080

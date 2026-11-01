@@ -8,18 +8,29 @@
 
  :: Spring Boot ::                (v3.5.7)
 
-2026-10-25 11:32:10.010 INFO  [main] c.e.h.HandlingFormSubmissionApplication - Starting HandlingFormSubmissionApplication using Java 24.0.1 with PID 11016 (C:\Users\brisi\OneDrive\Documents\Past Classes\Object Oriented Programming\WebApplication\WebApplicationIntegration\target\classes started by brisi in C:\Users\brisi\OneDrive\Documents\Past Classes\Object Oriented Programming\WebApplication\WebApplicationIntegration)
-2026-10-25 11:32:10.013 INFO  [main] c.e.h.HandlingFormSubmissionApplication - No active profile set, falling back to 1 default profile: "default"
-2026-10-25 11:32:10.852 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
-2026-10-25 11:32:10.865 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
-2026-10-25 11:32:10.865 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.48]
-2026-10-25 11:32:10.904 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2026-10-25 11:32:10.904 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 836 ms
-2026-10-25 11:32:11.187 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
-2026-10-25 11:32:11.192 INFO  [main] c.e.h.HandlingFormSubmissionApplication - Started HandlingFormSubmissionApplication in 1.635 seconds (process running for 2.03)
-2026-10-25 11:32:24.359 INFO  [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-10-25 11:32:24.359 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2026-10-25 11:32:24.361 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
-2026-10-25 11:32:24.425 INFO  [http-nio-8080-exec-1] c.e.h.GreetingController - Greeting form accessed
-2026-10-25 11:37:03.875 INFO  [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-2026-10-25 11:37:03.882 INFO  [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-11-01 10:25:42.050 INFO  [main] c.e.h.HandlingFormSubmissionApplication - Starting HandlingFormSubmissionApplication using Java 24.0.1 with PID 24552 (C:\Users\brisi\OneDrive\Documents\Past Classes\Object Oriented Programming\WebApplication\WebApplicationIntegration\target\classes started by brisi in C:\Users\brisi\OneDrive\Documents\Past Classes\Object Oriented Programming\WebApplication\WebApplicationIntegration)
+2026-11-01 10:25:42.054 DEBUG [main] c.e.h.HandlingFormSubmissionApplication - Running with Spring Boot v3.5.7, Spring v6.2.12
+2026-11-01 10:25:42.055 INFO  [main] c.e.h.HandlingFormSubmissionApplication - No active profile set, falling back to 1 default profile: "default"
+2026-11-01 10:25:43.760 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-11-01 10:25:43.815 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-11-01 10:25:43.815 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.48]
+2026-11-01 10:25:43.992 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-11-01 10:25:43.993 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1834 ms
+2026-11-01 10:25:45.347 WARN  [main] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2026-11-01 10:25:45.389 INFO  [main] o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-11-01 10:25:45.486 ERROR [main] o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
