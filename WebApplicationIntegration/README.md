@@ -110,3 +110,47 @@ The console output can also be saved to a text file for reviewing and analyzing 
 The greeting form uses server-side validation in `GreetingController.java` to check for missing required fields.
 
 The HTML form includes the `novalidate` attribute, allowing incomplete submissions to reach the Java controller. When required information is missing, the application displays an error message and records a WARN log.
+
+
+## Infrastructure as Code (Terraform)
+
+### Terraform Environment
+
+Terraform version 1.17.2 was used with the Docker provider to manage the infrastructure for my Spring Boot application.
+
+The configuration is located in the `terraform` folder and uses the existing `greeting-app:v4` Docker image.
+
+### Terraform Configuration
+
+The configuration manages one Docker container named `terraform-greeting-app`.
+
+The container includes the following resource settings:
+
+- **Memory limit:** 512 MiB
+- **Memory and swap limit:** 1,024 MiB
+- **CPU affinity:** Logical CPU 0
+- **CPU shares:** 512
+
+### Deploying the Application
+
+Navigate to the Terraform folder and run:
+
+```powershell
+terraform init
+terraform validate
+terraform plan
+terraform apply
+```
+
+The application can then be accessed at:
+
+**http://localhost:8084/greeting**
+
+### Removing the Infrastructure
+
+To remove the container, run:
+
+```powershell
+terraform destroy
+```
+
